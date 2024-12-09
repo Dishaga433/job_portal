@@ -1,0 +1,50 @@
+{% extends "admin/admin_base.html" %}
+{% block content %}
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sl no</th>
+      <th scope="col">Worker_name</th>
+      <th scope="col">Age</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Address</th>
+      <th scope="col">Ph_no</th>
+      <th scope="col">Job_category</th>
+      <th scope="col">Experience</th>
+      <th scope="col">Preffered_location</th>
+      <th scope="col">Job_type</th>
+      <th scope="col">Accept</th>
+      <th scope="col">Reject</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.Worker_name.Name}}</td>
+      <td>{{i.Age}}</td>
+      <td>{{i.DOB}}</td>
+      <td>{{i.Address}}</td>
+      <td>{{i.Ph_no}}</td>
+      <td>{{i.Job_category}}</td>
+      <td>{{i.Experience}}</td>
+      <td>{{i.Preffered_location}}</td>
+      <td>{{i.type}}</td>
+
+
+       <td><a href="{% url 'accept' i.id %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Accept</a></td>
+       <td><a href="{% url 'reject' i.id %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Reject</a></td>
+
+
+
+
+    </tr>
+  {% endfor %}
+
+
+  </tbody>
+</table>
+{% endblock %}

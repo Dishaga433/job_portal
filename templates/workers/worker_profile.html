@@ -1,0 +1,26 @@
+{% extends "workers/workers_base.html" %}
+{% block content %}
+
+<div class="card" style="width: 18rem;">
+  <img src="{{form.document.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{form.Name}}</h5>
+
+  </div>
+  <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{form.Age}}</li>
+    <li class="list-group-item">{{form.DOB}}</li>
+    <li class="list-group-item">{{form.Address}}</li>
+    <li class="list-group-item">{{form.Ph_no}}</li>
+      <li class="list-group-item">{{form.Job_category}}</li>
+    <li class="list-group-item">{{form.Experience}}</li>
+  </ul>
+   <td><a href="{% url 'profile_update' form.id %}" class= "btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Update</a></td>
+
+
+</div>
+
+
+
+
+{% endblock %}
